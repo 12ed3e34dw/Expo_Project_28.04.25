@@ -310,6 +310,7 @@ export default function App() {
             style={{ flex: 1 }}
         >
             <StatusBar />
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <ScrollView contentContainerStyle={isPortrait ? styles.container : styles.containerLandscape}>
                 <Text style={styles.heading}>Форма реєстрації</Text>
 
@@ -319,8 +320,8 @@ export default function App() {
                 </View>
 
                 <View style={isPortrait ? styles.inputContainer : styles.inputContainerLandscape}>
-                    <Text>Введіть Ваше прізвище</Text>
-                    <TextInput style={styles.input} placeholder="прізвище" />
+                    <Text>Введіть Ваш пароль</Text>
+                    <TextInput style={styles.input} placeholder="пароль"  secureTextEntry onChangeText={setPassword}/>
                 </View>
 
                 <View style={isPortrait ? styles.inputContainer : styles.inputContainerLandscape}>
@@ -329,13 +330,13 @@ export default function App() {
                 </View>
 
                 <View style={isPortrait ? styles.inputContainer : styles.inputContainerLandscape}>
-                    <Text>Введіть Ваш пароль</Text>
-                    <TextInput style={styles.input} placeholder="пароль" secureTextEntry onChangeText={setPassword}/>
+                    <Text>Введіть Ваш пароль повторно</Text>
+                    <TextInput style={styles.input} placeholder=" повторення пароля " secureTextEntry onChangeText={setPassword1}/>
                 </View>
 
                 <View style={isPortrait ? styles.inputContainer : styles.inputContainerLandscape}>
-                    <Text>Введіть Ваш пароль повторно</Text>
-                    <TextInput style={styles.input} placeholder="повторення пароля" secureTextEntry onChangeText={setPassword1}/>
+                    <Text>Введіть Ваше прізвище</Text>
+                    <TextInput style={styles.input} placeholder="прізвище"/>
                 </View>
 
                 <View style={isPortrait ? styles.inputContainer : styles.inputContainerLandscape}>
@@ -352,6 +353,7 @@ export default function App() {
                     <Button title="Відправити" onPress={Forms} />
                 </View>
             </ScrollView>
+            </TouchableWithoutFeedback>
         </KeyboardAvoidingView>
     );
 }
@@ -396,8 +398,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
     buttonContainerLandscape: {
-        width: '100%',
-        marginTop: 20,
+        width: '110',
+        marginTop: 35,
     },
 });
 
